@@ -3,6 +3,7 @@
 szx compiler
 
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Usage](#usage)
 - [Features](#features)
@@ -30,11 +31,13 @@ If you are interested in contributing, please check back later
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 # szxComp
 
 szx compiler
 
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Usage](#usage)
 - [Features](#features)

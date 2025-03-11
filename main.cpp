@@ -7,7 +7,7 @@ int main() {
 
     Kompilator komp;
 
-    std::cout << komp.kompiluj(kod,"-t");
+    std::cout << komp.kompiluj(kod, "-t");
 
     return 0;
 }

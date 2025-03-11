@@ -7,4 +7,11 @@ add_executable(compilerxd main.cpp
         Lexer.cpp
         Lexer.h
         Kompilator.cpp
-        Kompilator.h)
+        Kompilator.h
+        Parser.cpp
+        Parser.h
+        Node.h
+        NumNode.h
+        OpNode.h
+        VarNode.h
+        AsgNode.h)
