@@ -3,11 +3,11 @@
 #include <string>
 
 int main() {
-    std::string kod = "let i=0; print(i);";
+  std::string kod = "let i=0 + 2 - 2 * 2; print(i);";
 
-    Kompilator komp;
+  Kompilator komp;
 
-    std::cout << komp.kompiluj(kod, "-t");
+  std::cout << komp.kompiluj(kod);
 
-    return 0;
+  return 0;
 }

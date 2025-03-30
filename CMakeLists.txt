@@ -14,4 +14,12 @@ add_executable(compilerxd main.cpp
         NumNode.h
         OpNode.h
         VarNode.h
-        AsgNode.h)
+        AsgNode.h
+        Interpreter.cpp
+        Interpreter.h
+        AsgNode.cpp
+        PrintNode.cpp
+        PrintNode.h
+        NumNode.cpp
+        VarNode.cpp
+        OpNode.cpp)

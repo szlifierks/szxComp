@@ -1,19 +1,19 @@
 #ifndef VARNODE_H
 #define VARNODE_H
 
-#include <string>
-#include <utility>
-
-
 #include "Node.h"
+#include <string>
 
-class VarNode:Node {
+class VarNode : public Node {
+private:
+  std::string name;
+
 public:
+  explicit VarNode(std::string name);
+  ~VarNode() override = default;
 
-    std::string name;
-    explicit VarNode(std::string name) : name(std::move(name)) {};
-
-    static NodeType getType() override {return NodeType::VAR;};
+  [[nodiscard]] NodeType getType() const override;
+  [[nodiscard]] const std::string &getName() const;
 };
 
-#endif //VARNODE_H
+#endif // VARNODE_H

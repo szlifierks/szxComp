@@ -3,14 +3,16 @@
 #include <string>
 
 #include "Lexer.h"
+#include "Parser.h"
+#include "Interpreter.h"
 
-
-class Kompilator : Lexer {
+class Kompilator : public Lexer {
 public:
-    std::string kompiluj(std::string kod);
+  std::string kompiluj(std::string kod);
+  std::string kompiluj(std::string kod, std::string flagi);
 
-    std::string kompiluj(std::string kod, std::string flagi);
+private:
+  Interpreter interpreter;
 };
 
-
-#endif //KOMPILATOR_H
+#endif // KOMPILATOR_H

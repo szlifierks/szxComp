@@ -2,13 +2,16 @@
 #define NUMNODE_H
 #include "Node.h"
 
-class NumNode:Node {
-    public:
+class NumNode : public Node {
+private:
+  int num;
 
-    int num;
-    explicit NumNode(int num) : num(num) {};
+public:
+  explicit NumNode(int num);
+  ~NumNode() override = default;
 
-    static NodeType getType() override {return NodeType::NUM;};
+  [[nodiscard]] NodeType getType() const override;
+  [[nodiscard]] int getNum() const;
 };
 
-#endif //NUMNODE_H
+#endif // NUMNODE_H

@@ -2,16 +2,17 @@
 #define NODE_H
 
 enum class NodeType {
-    NUM,//liczba
-    OP,//operator
-    VAR,//zmienne
-    ASG//definicje
+  NUM,   // liczba
+  OP,    // operator
+  VAR,   // zmienne
+  ASG,   // definicje
+  PRINT  // instrukcja print
 };
 
 class Node {
-    public:
-    virtual ~Node() = default;
-    [[nodiscard]] virtual NodeType getType() const = 0;
+public:
+  virtual ~Node() = default;
+  [[nodiscard]] virtual NodeType getType() const = 0;
 };
 
-#endif //NODE_H
+#endif // NODE_H
