@@ -11,10 +11,11 @@
 #include "AsgNode.h"
 #include <stdexcept>
 #include "PrintNode.h"
+#include <iostream>
 
 class Interpreter {
 public:
-  Interpreter();
+  Interpreter() = default;
 
   int interpretuj(const Node* node);
   std::string drzewoAst(const Node* node, int indent = 0, bool ostatni = true);

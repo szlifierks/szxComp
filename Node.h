@@ -6,7 +6,8 @@ enum class NodeType {
   OP,    // operator
   VAR,   // zmienne
   ASG,   // definicje
-  PRINT  // instrukcja print
+  PRINT,  // instrukcja print
+  SEQ //obsluga wielu instrukcji po ;
 };
 
 class Node {

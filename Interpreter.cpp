@@ -1,6 +1,6 @@
 #include "Interpreter.h"
 
-Interpreter::Interpreter() {}
+#include "SeqNode.h"
 
 void Interpreter::czyscWyniki() {
     wynikiPrint.clear();
@@ -62,6 +62,16 @@ int Interpreter::interpretuj(const Node* node) {
         int wynik = interpretuj(printNode->getExpression());
         wynikiPrint.push_back(std::to_string(wynik)); // zapisz wynik
         return wynik;
+    }
+    case NodeType::SEQ: {
+        const SeqNode* seqNode = dynamic_cast<const SeqNode*>(node);
+        int last = 0;
+
+        for (const auto& instrukcja : seqNode -> getInstr()) {
+            last = interpretuj(instrukcja.get());
+        }
+
+        return last;
     }
     default:
         throw std::runtime_error("nieznany typ wezla");
@@ -135,6 +145,20 @@ std::string Interpreter::drzewoAst(const Node* node, int indent, bool ostatni) {
         std::string linia = (ostatni) ? " " : "|";
         result += wciecie.substr(0, wciecie.length() - 4) + linia + "\n";
         result += drzewoAst(printNode->getExpression(), indent + 1, true);
+        break;
+    }
+    case NodeType::SEQ: {
+        const SeqNode* sequenceNode = dynamic_cast<const SeqNode*>(node);
+        result += wciecie + "+----------+\n";
+        result += wciecie + "| SEQUENCE  |\n";
+        result += wciecie + "+----------+\n";
+
+        const auto& instructions = sequenceNode->getInstr();
+        for (size_t i = 0; i < instructions.size(); ++i) {
+            std::string linia = (ostatni) ? " " : "|";
+            result += wciecie.substr(0, wciecie.length() - 4) + linia + "\n";
+            result += drzewoAst(instructions[i].get(), indent + 1, i == instructions.size() - 1);
+        }
         break;
     }
     }

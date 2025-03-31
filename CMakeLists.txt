@@ -22,4 +22,6 @@ add_executable(compilerxd main.cpp
         PrintNode.h
         NumNode.cpp
         VarNode.cpp
-        OpNode.cpp)
+        OpNode.cpp
+        SeqNode.cpp
+        SeqNode.h)

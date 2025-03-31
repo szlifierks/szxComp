@@ -3,7 +3,7 @@
 #include <string>
 
 int main() {
-  std::string kod = "let i=0 + 2 - 2 * 2; print(i);";
+  std::string kod = "let i=2+2*2; print(i);";
 
   Kompilator komp;
 

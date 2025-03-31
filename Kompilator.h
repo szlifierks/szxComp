@@ -5,6 +5,7 @@
 #include "Lexer.h"
 #include "Parser.h"
 #include "Interpreter.h"
+#include <iostream>
 
 class Kompilator : public Lexer {
 public:

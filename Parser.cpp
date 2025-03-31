@@ -1,7 +1,25 @@
 #include "Parser.h"
 
+#include "SeqNode.h"
 
-std::unique_ptr<Node> Parser::parse() { return parseLine(); }
+std::unique_ptr<Node> Parser::parse() {
+  auto seq = std::make_unique<SeqNode>();
+
+  while (idx < tokens.size()) {
+    auto instrukcja = parseLine();
+
+    if (instrukcja) {
+      seq -> dodajInstr(std::move(instrukcja));
+    }
+
+    //jak skoncza sie tokeny
+    if (idx >= tokens.size()) {
+      break;
+    }
+  }
+
+  return seq;
+}
 
 std::unique_ptr<Node> Parser::parseLine() {
   // obsluga let

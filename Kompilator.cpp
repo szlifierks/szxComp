@@ -18,13 +18,13 @@ std::string Kompilator::kompiluj(std::string kod) {
 
   // dolaczanie print
   if (!wyniki.empty()) {
-    rezultat += "\n\n";
+    rezultat += "\n";
     for (const auto& wynik : wyniki) {
       rezultat += wynik + "\n";
     }
   }
 
-  rezultat =+ "program wykonany bez bledow";
+  rezultat += "program wykonany bez bledow";
 
   return rezultat;
 }
